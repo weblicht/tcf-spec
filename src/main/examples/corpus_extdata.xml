@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="d-spin-local_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata"/>
+  <ExternalData xmlns="http://www.dspin.de/data/extdata">
+    <namedentitymodel type="application/octet-stream" netype="conll2003" modeltype="opennlp-1.5">http://arc:8080/drop-off/storage/test.zip</namedentitymodel>
+  </ExternalData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="en">
+    <text>Although every machine on the Internet has one (or more) IP addresses, these cannot actually be used for sending packets because the data link layer hardware does not understand Internet addresses. 
+      Nowadays, most hosts at companies and universities are attached to a LAN by an interface board that only understands LAN addresses. 
+      For example, every Ethernet board ever manufactured comes equipped with a 48-bit Ethernet address. 
+      Manufacturers of Ethernet boards request a block of addresses from a central authority to ensure that no two boards have the same address (to avoid conflicts should the two boards ever appear on the same LAN). 
+      The boards send and receive frames based on 48-bit Ethernet addresses. They know nothing at all about 32-bit IP addresses. 
+    </text>
+    <tokens>
+      <token ID="t_0">Although</token>
+      <token ID="t_1">every</token>
+      <token ID="t_2">machine</token>
+      <token ID="t_3">on</token>
+      <token ID="t_4">the</token>
+      <token ID="t_5">Internet</token>
+      <token ID="t_6">has</token>
+      <token ID="t_7">one</token>
+      <token ID="t_8">-LRB-</token>
+      <token ID="t_9">or</token>
+      <token ID="t_10">more</token>
+      <token ID="t_11">-RRB-</token>
+      <token ID="t_12">IP</token>
+      <token ID="t_13">addresses</token>
+      <token ID="t_14">,</token>
+      <token ID="t_15">these</token>
+      <token ID="t_16">can</token>
+      <token ID="t_17">not</token>
+      <token ID="t_18">actually</token>
+      <token ID="t_19">be</token>
+      <token ID="t_20">used</token>
+      <token ID="t_21">for</token>
+      <token ID="t_22">sending</token>
+      <token ID="t_23">packets</token>
+      <token ID="t_24">because</token>
+      <token ID="t_25">the</token>
+      <token ID="t_26">data</token>
+      <token ID="t_27">link</token>
+      <token ID="t_28">layer</token>
+      <token ID="t_29">hardware</token>
+      <token ID="t_30">does</token>
+      <token ID="t_31">not</token>
+      <token ID="t_32">understand</token>
+      <token ID="t_33">Internet</token>
+      <token ID="t_34">addresses</token>
+      <token ID="t_35">.</token>
+      <token ID="t_36">Nowadays</token>
+      <token ID="t_37">,</token>
+      <token ID="t_38">most</token>
+      <token ID="t_39">hosts</token>
+      <token ID="t_40">at</token>
+      <token ID="t_41">companies</token>
+      <token ID="t_42">and</token>
+      <token ID="t_43">universities</token>
+      <token ID="t_44">are</token>
+      <token ID="t_45">attached</token>
+      <token ID="t_46">to</token>
+      <token ID="t_47">a</token>
+      <token ID="t_48">LAN</token>
+      <token ID="t_49">by</token>
+      <token ID="t_50">an</token>
+      <token ID="t_51">interface</token>
+      <token ID="t_52">board</token>
+      <token ID="t_53">that</token>
+      <token ID="t_54">only</token>
+      <token ID="t_55">understands</token>
+      <token ID="t_56">LAN</token>
+      <token ID="t_57">addresses</token>
+      <token ID="t_58">.</token>
+      <token ID="t_59">For</token>
+      <token ID="t_60">example</token>
+      <token ID="t_61">,</token>
+      <token ID="t_62">every</token>
+      <token ID="t_63">Ethernet</token>
+      <token ID="t_64">board</token>
+      <token ID="t_65">ever</token>
+      <token ID="t_66">manufactured</token>
+      <token ID="t_67">comes</token>
+      <token ID="t_68">equipped</token>
+      <token ID="t_69">with</token>
+      <token ID="t_70">a</token>
+      <token ID="t_71">48-bit</token>
+      <token ID="t_72">Ethernet</token>
+      <token ID="t_73">address</token>
+      <token ID="t_74">.</token>
+      <token ID="t_75">Manufacturers</token>
+      <token ID="t_76">of</token>
+      <token ID="t_77">Ethernet</token>
+      <token ID="t_78">boards</token>
+      <token ID="t_79">request</token>
+      <token ID="t_80">a</token>
+      <token ID="t_81">block</token>
+      <token ID="t_82">of</token>
+      <token ID="t_83">addresses</token>
+      <token ID="t_84">from</token>
+      <token ID="t_85">a</token>
+      <token ID="t_86">central</token>
+      <token ID="t_87">authority</token>
+      <token ID="t_88">to</token>
+      <token ID="t_89">ensure</token>
+      <token ID="t_90">that</token>
+      <token ID="t_91">no</token>
+      <token ID="t_92">two</token>
+      <token ID="t_93">boards</token>
+      <token ID="t_94">have</token>
+      <token ID="t_95">the</token>
+      <token ID="t_96">same</token>
+      <token ID="t_97">address</token>
+      <token ID="t_98">-LRB-</token>
+      <token ID="t_99">to</token>
+      <token ID="t_100">avoid</token>
+      <token ID="t_101">conflicts</token>
+      <token ID="t_102">should</token>
+      <token ID="t_103">the</token>
+      <token ID="t_104">two</token>
+      <token ID="t_105">boards</token>
+      <token ID="t_106">ever</token>
+      <token ID="t_107">appear</token>
+      <token ID="t_108">on</token>
+      <token ID="t_109">the</token>
+      <token ID="t_110">same</token>
+      <token ID="t_111">LAN</token>
+      <token ID="t_112">-RRB-</token>
+      <token ID="t_113">.</token>
+      <token ID="t_114">The</token>
+      <token ID="t_115">boards</token>
+      <token ID="t_116">send</token>
+      <token ID="t_117">and</token>
+      <token ID="t_118">receive</token>
+      <token ID="t_119">frames</token>
+      <token ID="t_120">based</token>
+      <token ID="t_121">on</token>
+      <token ID="t_122">48-bit</token>
+      <token ID="t_123">Ethernet</token>
+      <token ID="t_124">addresses</token>
+      <token ID="t_125">.</token>
+      <token ID="t_126">They</token>
+      <token ID="t_127">know</token>
+      <token ID="t_128">nothing</token>
+      <token ID="t_129">at</token>
+      <token ID="t_130">all</token>
+      <token ID="t_131">about</token>
+      <token ID="t_132">32-bit</token>
+      <token ID="t_133">IP</token>
+      <token ID="t_134">addresses</token>
+      <token ID="t_135">.</token>
+    </tokens>
+    <sentences>
+      <sentence tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5 t_6 t_7 t_8 t_9 t_10 t_11 t_12 t_13 t_14 t_15 t_16 t_17 t_18 t_19 t_20 t_21 t_22 t_23 t_24 t_25 t_26 t_27 t_28 t_29 t_30 t_31 t_32 t_33 t_34 t_35"/>
+      <sentence tokenIDs="t_36 t_37 t_38 t_39 t_40 t_41 t_42 t_43 t_44 t_45 t_46 t_47 t_48 t_49 t_50 t_51 t_52 t_53 t_54 t_55 t_56 t_57 t_58"/>
+      <sentence tokenIDs="t_59 t_60 t_61 t_62 t_63 t_64 t_65 t_66 t_67 t_68 t_69 t_70 t_71 t_72 t_73 t_74"/>
+      <sentence tokenIDs="t_75 t_76 t_77 t_78 t_79 t_80 t_81 t_82 t_83 t_84 t_85 t_86 t_87 t_88 t_89 t_90 t_91 t_92 t_93 t_94 t_95 t_96 t_97 t_98 t_99 t_100 t_101 t_102 t_103 t_104 t_105 t_106 t_107 t_108 t_109 t_110 t_111 t_112 t_113"/>
+      <sentence tokenIDs="t_114 t_115 t_116 t_117 t_118 t_119 t_120 t_121 t_122 t_123 t_124 t_125"/>
+      <sentence tokenIDs="t_126 t_127 t_128 t_129 t_130 t_131 t_132 t_133 t_134 t_135"/>
+    </sentences>
+ </TextCorpus>
+</D-Spin>

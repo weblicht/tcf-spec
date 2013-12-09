@@ -1,0 +1,14 @@
+default namespace = "http://www.dspin.de/data"
+
+element D-Spin { 
+
+  attribute version { "0.4" },
+
+  external "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/metadata_0_4.rnc",
+  external "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/extdata_0_4.rnc"?,
+  (external "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/textcorpus_0_4.rnc" |
+   external "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/lexicon_0_4.rnc")
+   
+}
+
+

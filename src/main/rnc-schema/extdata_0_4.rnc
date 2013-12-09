@@ -1,0 +1,41 @@
+default namespace = "http://www.dspin.de/data/extdata"
+
+start = 
+  element ExternalData {
+      (speechsignal? & tokensegmentation? & canonicalsegmentation? & phoneticsegmentation? & namedentitymodel?)
+  }
+
+
+speechsignal =
+  element speechsignal {
+    attribute type { xsd:string },
+    attribute numberchannels { xsd:integer }?,
+    xsd:anyURI
+  }
+  
+tokensegmentation =
+  element tokensegmentation {
+    attribute type { xsd:string },
+    xsd:anyURI
+  }
+  
+canonicalsegmentation =
+  element canonicalsegmentation {
+    attribute type { xsd:string },
+    xsd:anyURI
+  }
+  
+phoneticsegmentation =
+  element phoneticsegmentation {
+    attribute type { xsd:string },
+    xsd:anyURI
+  }
+
+namedentitymodel =
+  element namedentitymodel {
+    attribute type { xsd:string },
+    attribute netype { xsd:string },
+    attribute modeltype { xsd:string },
+    xsd:anyURI
+}
+

@@ -1,0 +1,79 @@
+default namespace = "http://www.dspin.de/data/lexicon"
+
+start =
+  element Lexicon {
+    attribute lang { xsd:language },
+    entries,
+    (POStags? & frequencies? & syllabifications? & 
+     cooccurrences? & synonyms?)
+  }
+
+
+entries  =
+  element entries {
+    attribute type { "types" | "lemmas" | "type-bigrams" | "type-trigrams" | "syllables"},
+    element entry {
+      attribute ID { xsd:ID },
+      xsd:string
+    }+
+  }
+
+
+POStags =
+  element POStags {
+    attribute tagset { xsd:string },
+    element tag {
+      attribute ID { xsd:ID }?,
+      attribute entryID { xsd:IDREF },
+      text
+    }+
+  }
+
+
+frequencies =
+  element frequencies {
+      attribute type { "per-million" | "absolute" },
+      element frequency {
+        attribute entryID { xsd:IDREF },
+        xsd:double
+     }+
+   }
+
+syllabifications =
+  element syllabifications {
+      element syllabification {
+      attribute entryID { xsd:IDREF },
+      xsd:string
+    }+
+  }
+
+cooccurrences =
+  element cooccurrences {
+    element cooccurrence {
+      attribute func { "right-neighbour" | "left-neighbour" | "sentence" | "document" },
+      sig*,
+      term,
+      term+
+    }+
+  }
+  
+synonyms =
+  element synonyms {
+    element synonym {
+      sig*,
+      term,
+      term+
+    }+
+  }
+
+term =
+  element term {
+      attribute entryID { xsd:IDREF }?,
+      xsd:string?
+  }
+sig =
+  element sig {
+    attribute measure { xsd:string }?,
+    xsd:float
+  }
+

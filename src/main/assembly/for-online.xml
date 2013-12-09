@@ -1,0 +1,33 @@
+<assembly>
+  <id>online</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <includes>
+        <include>README*</include>
+        <include>LICENSE*</include>
+        <include>NOTICE*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/rnc-schema</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>d-spin_0_4.rnc</include>
+        <include>metadata_0_4.rnc</include>
+        <include>extdata_0_4.rnc</include>
+        <include>lexicon_0_4.rnc</include>
+        <include>textcorpus_0_4.rnc</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/examples</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>tcf04-karin-wl.xml</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>
