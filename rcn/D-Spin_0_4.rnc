@@ -1,0 +1,13 @@
+default namespace = "http://www.dspin.de/data"
+
+element D-Spin { 
+
+  attribute version { "0.4" },
+
+  external "MetaData_0_4.rnc",
+  (external "TextCorpus_0_4.rnc" |
+   external "Lexicon_0_4.rnc") 
+   
+}
+
+

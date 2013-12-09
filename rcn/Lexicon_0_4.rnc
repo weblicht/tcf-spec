@@ -1,0 +1,52 @@
+default namespace = "http://www.dspin.de/data/lexicon"
+
+start =
+  element Lexicon {
+    attribute lang { xsd:language }?,
+    lemmas?,
+    (POStags? & frequencies? & word-relations?)
+  }
+lemmas =
+  element lemmas {
+    element lemma {
+      attribute ID { xsd:ID }?,
+      xsd:string
+    }+
+  }
+POStags =
+  element POStags {
+    attribute tagset { xsd:string },
+    element tag {
+      attribute ID { xsd:ID }?,
+      attribute lemID { xsd:IDREF },
+      text
+    }+
+  }
+frequencies =
+  element frequencies {
+    element frequency {
+      attribute lemID { xsd:IDREF },
+      xsd:int
+    }+
+  }
+word-relations =
+  element word-relations {
+    element word-relation {
+      attribute type { xsd:string }?,
+      attribute func { xsd:string }?,
+      attribute freq { xsd:int }?,
+      sig*,
+      term,
+      term+
+    }+
+  }
+term =
+  element term {
+    attribute lemID { xsd:IDREF }?,
+    xsd:string?
+  }
+sig =
+  element sig {
+    attribute measure { xsd:string }?,
+    xsd:float
+  }

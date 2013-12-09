@@ -1,0 +1,15 @@
+Wichtigste Änderungen
+
+- Erweiterung um TEI-, MAF- und error-Dokumentformate
+
+- In POStags und lemmas wird das Attribut tokID durch tokens { xsd:IDREFS }
+  ersetzt. Dadurch können MAF-Dokumente besser nach TC konvertiert werden.
+
+- Bei den Elementen sentences und namedEntities wird tokenRef*
+  ebenfalls durch tokens { xsd:IDREFS } ersetzt. Dadurch wird die
+  Repräsentation einheitlicher und braucht weniger Platz.
+
+- In sem_lex_rels werden alle Relationen einheitlich mit dem Element
+  rel repräsentiert. Die Art der Relation wird als Attribut von
+  sem_lex_rels kodiert. Durch diese Änderung wird die
+  XML-Schema-Beschreibung vereinfacht. 

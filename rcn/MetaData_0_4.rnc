@@ -1,0 +1,12 @@
+default namespace = "http://www.dspin.de/data/metadata"
+
+start = 
+  element MetaData {
+    any*
+  }
+
+
+any = 
+    element * { 
+    attribute * {text}*, (any|text)*
+   }

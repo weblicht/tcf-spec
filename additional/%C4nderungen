@@ -1,0 +1,91 @@
+Tokens werden von den Elementen tag, lemma, sentence, constituent, und
+namedEntities nun anders referenziert. tag und lemma enthielten bisher
+ein Attribut tokID. sentence und namedEntities enthielten eine Liste
+von tokenRefs (eines pro Token), und constituent enthielt eine Liste
+von tokenRef's oder constituent's.
+
+Das neue Format verwendet einheitlich das Attribut tokenIDs vom Type
+IDREFS, das ein Liste von IDs als Wert nimmt. Die Vorteile des neuen
+Formates sind eine Platzersparnis bei der Speicherung von
+Satzinformationen und Parsebäumen und die Möglichkeit, bei POS-Tags
+und Lemmata mehrere (auch diskontinuierliche) Tokens zu referenzieren,
+was die Abbildung vom MAF-Format ist TCF-Format erleichtern würde.
+
+Beispiele nach dem bisherigen TCF-Format (Version 0.3)
+
+   <sentence ID="s2" start="22" end="39">
+     <tokenRef tokID="t1"/>
+     <tokenRef tokID="t2"/>
+     <tokenRef tokID="t3"/>
+   </sentence>
+
+   <tag tokID="t2">NE</tag>
+
+   <lemma tokID="t2">Peter</lemma>
+
+   <constituent cat="NE" ID="c5">
+      <tokenRef tokID="t3"/>
+   </constituent>
+
+Beispiele nach dem neuen Format
+
+   <sentence ID="s2" start="22" end="39" tokenIDs="t1 t2 t3"/>
+
+   <tag tokenIDs="t2">NE</tag>
+
+   <lemma tokenIDs="t2">Peter</lemma>
+
+   <constituent cat="NE" ID="c5" tokenIDs="t3"/>
+
+Beim lemma-Element gibt es nun auch die Möglichkeit statt auf das
+(oder die) token's auf das tag zu verweisen. Damit wird es möglich,
+einen Text mehrdeutig zu taggen (d.h. einem Token mehrere mögliche
+Tags zuzuweisen) und gleichzeitig jedem möglichen Tag sein eigenes
+Lemma zuzuweisen.
+
+   <tag ID="T1" tokID="t2">NE</tag>
+   <lemma tagID="T1">Peter</lemma>
+
+Beim text-Element kann nun der Textstring separat gespeichert und über
+eine URL eingebunden werden.  Das Element
+
+<text>Peter aß Pizza.</text>
+
+wird ersetzt durch
+
+<text location="http://www.ims.uni-stuttgart.de/~schmid/test.txt"
+encoding="latin1"/>
+
+In der Datei test.txt steht der eigentliche Text.
+
+Diese Variante hat zwei technische Vorteile:
+
+- Es gibt keine Probleme, wenn ein XML-Parser ein TCF-Dokument
+  umformatiert und Leerzeichen löscht oder hinzufügt.
+
+- Es wird verhindert, dass der XML-Parser in Schwierigkeiten kommt,
+  weil er riesige text-Elemente parsen muss.
+
+Das Element coreferences wird durch ein allgemeineres Element
+relations ersetzt.  Die alte Repräsentation
+
+  <coreferences>
+   <coreference>
+    <referent constID="c3"/>
+    <referent constID="c17"/>
+   </coreference>
+   <coreference>
+    <referent constID="c7"/>
+    <referent constID="c13"/>
+   </coreference>
+  </coreferences>
+
+wird ersetzt durch
+
+  <relations type="coreference">
+   <relation refIDs="c3 c17"/>
+   <relation refIDs="c7 c13"/>
+  </relations>
+
+Als neue Dokumentsorten kommen MAF-Dokumente, TEI-Dokumente,
+arguments-Dokumente, und Fehlerdokumente hinzu.
