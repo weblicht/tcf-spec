@@ -28,6 +28,7 @@
       <frequency entryID="e_7">413.822498777</frequency>
       <frequency entryID="e_8">319.686464138</frequency>
       <frequency entryID="e_9">17.8870728432</frequency>
+      <frequency entryID="e_10">201.8870728432</frequency>
     </frequencies>
     <syllabifications>
       <syllabification entryID="e_0">ka-rin</syllabification>
@@ -40,6 +41,7 @@
       <syllabification entryID="e_7">will</syllabification>
       <syllabification entryID="e_8">dort</syllabification>
       <syllabification entryID="e_9">ur-laub</syllabification>
+      <syllabification entryID="e_10">ma-chen</syllabification>
     </syllabifications>
     <cooccurrences>
       <cooccurrence func="right-neighbour">
