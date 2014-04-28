@@ -1,11 +1,178 @@
 default namespace = "http://www.dspin.de/data/metadata"
+namespace cmd = "http://www.clarin.eu/cmd/"
+namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
-start = 
-  element MetaData {
-    any*
-  }
+start =
+    element MetaData {(
+      element Services { CMD }? # use this element for wrapping chain CMD
+      &
+      element md { # deprecated, don't use it (left for backward compatibility)
+        attribute name { xsd:string },
+        attribute value { xsd:string }
+      }*
+      &
+      element source { text }?  # deprecated, don't use it (left for backward compatibility)
+  )}
 
-
+# Original schema is xsd schema, here converted to rnc. The converted version might be not complete.
+# For original schema see:
+# http://www.clarin.eu/cmd/ 
+# http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd
+CMD =
+        element cmd:CMD {
+          attribute CMDVersion { "1.1" },
+          attribute xsi:schemaLocation { "http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd" },
+          
+          element cmd:Header {
+              element cmd:MdCreator { xsd:string }*,
+              element cmd:MdCreationDate { xsd:date }?, 
+              element cmd:MdSelfLink { xsd:anyURI }?,
+              element cmd:MdProfile { xsd:anyURI }?,
+              element cmd:MdCollectionDisplayName { xsd:string }?
+          }?,
+          
+          element cmd:Resources {
+            element cmd:ResourceProxyList { 
+                element cmd:ResourceProxy {
+                    attribute id { xsd:ID },
+                    element ResourceType {
+                        attribute mimetype { xsd:string }
+                    },
+                    element ResourceRef { xsd:anyURI }
+                }*
+            },
+            element cmd:JournalFileProxyList { 
+                element cmd:JournalFileProxy {
+                    element cmd:JournalFileRef { xsd:anyURI }
+                }*
+            },
+            element cmd:ResourceRelationList { 
+                element cmd:ResourceRelation {
+                    element cmd:RelationType { any },
+                    element cmd:Res1 { attribute ref { xsd:IDREF } },
+                    element cmd:Res2 { attribute ref { xsd:IDREF } }
+                }*
+            },
+            element cmd:IsPartOfList { 
+                element cmd:ResourceRelation {
+                    element cmd:IsPartOf { xsd:anyURI }*
+                }
+            }?
+          },
+          
+          element cmd:Components {
+          
+            element cmd:WebServiceToolChain {
+            
+              attribute ref { xsd:IDREFS }?,
+              element cmd:GeneralInfo {(
+                  element cmd:ResourceName { 
+                      attribute lang { xsd:language }?,
+                      xsd:string
+                  }*
+                  &
+                  element cmd:ResourceTitle { 
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd:ResourceClass { xsd:NCName }*
+                  &
+                  element cmd:Version { 
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd:LifeCycleStatus { xsd:string }?
+                  &
+                  element cmd:StartYear { xsd:gYear }?
+                  &
+                  element cmd:CompletionYear { xsd:gYear }?
+                  &
+                  element cmd:PublicationDate { xsd:string }?
+                  &
+                  element cmd:LastUpdate { xsd:string }?
+                  &
+                  element cmd:TimeCoverage { 
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd:LegalOwner { 
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd:Genre { 
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd:Location { 
+                      attribute ref { xsd:IDREFS },
+                      attribute ComponentId { xsd:anyURI },
+                      element cmd:Address { 
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }*,
+                      element cmd:Region { 
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }*,
+                      element cmd:ContinentName { 
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }*,
+                      element cmd:Country { 
+                          attribute ref { xsd:IDREFS },
+                          attribute ComponentId { xsd:anyURI },
+                          element cmd:CountryName { 
+                              attribute lang { xsd:language },
+                              xsd:string
+                          }+,
+                          element cmd:CountryCoding { xsd:NCName }
+                      }
+                  }?
+                  &
+                  element cmd:Descriptions {
+                      attribute ref { xsd:IDREFS }?,
+                      attribute ComponentId { xsd:anyURI }?,
+                      element cmd:Description { 
+                          attribute type {"short" | "long"}?,
+                          attribute lang { xsd:language }?
+                      }+
+                  }?
+                  &
+                  element cmd:Tags {
+                      attribute ref { xsd:IDREFS },
+                      attribute ComponentId { xsd:anyURI },
+                      element cmd:tag { 
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }+
+                  }?
+              )},
+              
+              element cmd:Toolchain {
+                  attribute ref { xsd:IDREFS }?,
+                  attribute ComponentId { xsd:anyURI }?,
+                  element cmd:ToolInChain {
+                      attribute ref { xsd:IDREFS }?,
+                      attribute ComponentId { xsd:anyURI }?,
+                      element cmd:PID { xsd:anyURI },
+                      element cmd:Parameter {
+                          attribute name { xsd:string },
+                          attribute value { xsd:string }
+                     }*
+                  }+
+              }
+              
+            }
+            
+          }
+        }
+        
+        
 any = 
     element * { 
     attribute * {text}*, (any|text)*
