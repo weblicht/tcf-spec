@@ -5,7 +5,7 @@
 
     <groupId>eu.clarin.weblicht</groupId>
     <artifactId>TCF</artifactId>
-    <version>0.4.1</version>
+    <version>0.4.3</version>
     <packaging>jar</packaging>
 
     <name>TCF</name>
