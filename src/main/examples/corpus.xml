@@ -52,9 +52,9 @@
       </textspan>
       
       <textspan type="line"/>
-      <textspan start="t1" end="t9" type="paragraph"/>
-      <textspan start="t1" end="t3" type="line"/>
-      <textspan start="t4" end="t5" type="line"/>
+      <textspan start="t1" end="t9" startChar="0" endChar="45" type="paragraph"/>
+      <textspan start="t1" end="t3" startChar="0" endChar="13" type="line"/>
+      <textspan start="t4" end="t5" startChar="14" endChar="26" type="line"/>
       
       <textspan start="t6" end="t9" type="page">
         <textspan type="number">3</textspan>
@@ -66,8 +66,8 @@
         </textspan>
       </textspan>
       
-      <textspan start="t6" end="t7" type="line"/>
-      <textspan start="t8" end="t9" type="line"/>
+      <textspan start="t6" end="t7" startChar="27" endChar="40" type="line"/>
+      <textspan start="t8" end="t9" startChar="41" endChar="45" type="line"/>
       <textspan type="line"/>
       
     </textstructure>
@@ -237,8 +237,8 @@
     
     <!-- semantically this example doesn't make sense, but is given just for the sake of xml example -->
     <discourseconnectives tagset="TuebaDZ">
-      <connective tokenIDs="t_3" type="expansion"/>
-      <connective tokenIDs="t_5" type="temporal"/>
+      <connective tokenIDs="t3" type="expansion"/>
+      <connective tokenIDs="t5" type="temporal"/>
     </discourseconnectives>
   
  </TextCorpus>

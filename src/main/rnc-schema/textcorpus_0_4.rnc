@@ -33,6 +33,8 @@ textstructure =
   
 textspan =
  element textspan {
+      (attribute startChar { xsd:nonNegativeInteger }, # character offset of the span start in text
+      attribute endChar   { xsd:nonNegativeInteger })?, # character offset of the span end in text
       attribute start { xsd:ID }?,
       attribute end { xsd:ID }?,
       attribute type { xsd:string },  # type of this textstructure span, e.g. page, title, paragraph, footnote, etc.
