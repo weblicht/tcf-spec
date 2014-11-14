@@ -17,6 +17,7 @@ start =
      & synonymy? & antonymy? & hyponymy? & hyperonymy?
      & orthography? & geo? & textstructure?
      & discourseconnectives? & wsd?
+     & textSource?
      )
   }
 
@@ -473,4 +474,22 @@ element wsd {
           # comment for the word-sense
           attribute comment { xsd:string }? 
      }*
+}
+
+# The source of the text and/or tokens can be embedded here or
+# referred to as an external reference.
+# Motivated by TEI to TCF convertion effort, but can be used for 
+# spcifying other types of input sources, too.
+textSource = 
+element textSource {
+    # type of text source, e.g,
+    #  "tei+ws" (pre-tokenized tei-xml with <w> and <s> elements)
+    #  "tei" (raw, un-tokenized tei-xml)
+    #  alternatively one can specify mime-type-like string for other
+    #  file types/encodings like 'text/html; charset=UTF-8'
+    attribute type { xsd:string },
+    # actual source content, supplied as external reference
+    attribute extref { xsd:anyURI}?,
+    # actual source content as embedded text node
+    xsd:string?
 }

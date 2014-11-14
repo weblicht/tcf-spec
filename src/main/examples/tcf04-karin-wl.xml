@@ -380,5 +380,46 @@
       <ws tokenIDs="t_9" lexunits="-1" comment="unbestimmbar"/>
       <ws tokenIDs="t_10" lexunits="82896"/>
     </wsd>
+    <textSource type="tei/tokenized">
+&lt;TEI xmlns="http://www.tei-c.org/ns/1.0"&gt;&gt;
+&lt;teiHeader&gt;
+    &lt;fileDesc&gt;
+        &lt;titleStmt&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;respStmt&gt;
+            &lt;name&gt;&lt;/name&gt;
+            &lt;resp&gt;&lt;/resp&gt;
+            &lt;/respStmt&gt;
+        &lt;/titleStmt&gt;
+        &lt;publicationStmt&gt;&lt;p&gt;&lt;/p&gt;
+        &lt;/publicationStmt&gt;
+        &lt;sourceDesc&gt;&lt;p&gt;&lt;/p&gt;
+        &lt;/sourceDesc&gt;
+    &lt;/fileDesc&gt;
+&lt;/teiHeader&gt;
+&lt;text&gt;
+&lt;body&gt;
+&lt;p&gt;
+&lt;s&gt;
+&lt;w&gt;Karin&lt;/w&gt;
+&lt;w&gt;fliegt&lt;/w&gt;
+&lt;w&gt;nach&lt;/w&gt;
+&lt;w&gt;New&lt;/w&gt;
+&lt;w&gt;York&lt;/w&gt;
+&lt;w&gt;.&lt;/w&gt;
+&lt;/s&gt;
+&lt;s&gt;
+&lt;w&gt;Sie&lt;/w&gt;
+&lt;w&gt;will&lt;/w&gt;
+&lt;w&gt;dort&lt;/w&gt;
+&lt;w&gt;Urlaub&lt;/w&gt;
+&lt;w&gt;machen&lt;/w&gt;
+&lt;w&gt;.&lt;/w&gt;
+&lt;/s&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/text&gt;
+&lt;/TEI&gt;
+    </textSource>
   </TextCorpus>
 </D-Spin>

@@ -240,6 +240,7 @@
       <connective tokenIDs="t3" type="expansion"/>
       <connective tokenIDs="t5" type="temporal"/>
     </discourseconnectives>
-  
+    <textSource type="tei" extref="http://example.com/example.tei">
+    </textSource>
  </TextCorpus>
 </D-Spin>

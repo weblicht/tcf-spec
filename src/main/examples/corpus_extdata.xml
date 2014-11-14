@@ -158,5 +158,42 @@
       <sentence tokenIDs="t_114 t_115 t_116 t_117 t_118 t_119 t_120 t_121 t_122 t_123 t_124 t_125"/>
       <sentence tokenIDs="t_126 t_127 t_128 t_129 t_130 t_131 t_132 t_133 t_134 t_135"/>
     </sentences>
+    <textSource type="tei">
+&lt;TEI&gt;
+&lt;teiHeader&gt;
+    &lt;fileDesc&gt;
+        &lt;titleStmt&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;respStmt&gt;
+            &lt;name&gt;&lt;/name&gt;
+            &lt;resp&gt;&lt;/resp&gt;
+            &lt;/respStmt&gt;
+        &lt;/titleStmt&gt;
+        &lt;publicationStmt&gt;&lt;p&gt;&lt;/p&gt;
+        &lt;/publicationStmt&gt;
+        &lt;sourceDesc&gt;&lt;p&gt;&lt;/p&gt;
+        &lt;/sourceDesc&gt;
+    &lt;/fileDesc&gt;
+&lt;/teiHeader&gt;
+&lt;text&gt;
+&lt;body&gt;
+&lt;p&gt;Although every machine on the Internet has one (or more) IP addresses, these cannot actually be used for sending packets because the data link layer hardware does not understand Internet addresses. 
+&lt;/p&gt;
+&lt;p&gt;
+Nowadays, most hosts at companies and universities are attached to a LAN by an interface board that only understands LAN addresses. 
+&lt;/p&gt;
+&lt;p&gt;
+For example, every Ethernet board ever manufactured comes equipped with a 48-bit Ethernet address. 
+&lt;/p&gt;
+&lt;p&gt;
+Manufacturers of Ethernet boards request a block of addresses from a central authority to ensure that no two boards have the same address (to avoid conflicts should the two boards ever appear on the same LAN). 
+&lt;/p&gt;
+&lt;p&gt;
+The boards send and receive frames based on 48-bit Ethernet addresses. They know nothing at all about 32-bit IP addresses. 
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/text&gt;
+&lt;/TEI&gt;
+    </textSource>
  </TextCorpus>
 </D-Spin>
