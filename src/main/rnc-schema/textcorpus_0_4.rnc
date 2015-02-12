@@ -483,10 +483,14 @@ element wsd {
 textSource = 
 element textSource {
     # type of text source, e.g,
-    #  "tei+ws" (pre-tokenized tei-xml with <w> and <s> elements)
-    #  "tei" (raw, un-tokenized tei-xml)
-    #  alternatively one can specify mime-type-like string for other
-    #  file types/encodings like 'text/html; charset=UTF-8'
+    #  This should be set to the mime type of the source content.
+    #
+    #  For TEI documents, the follwoing guidelines apply.
+    #   type=""application/tei+xml" - default 
+    #   type=""application/tei+xml; tokenized=no"  : non-tokenized
+    #   type=""application/tei+xml; tokenized=0"   : non-tokenized
+    #   type=""application/tei+xml; tokenized=yes" : tokenized
+    #   type=""application/tei+xml; tokenized=1"   : tokenized
     attribute type { xsd:string },
     # actual source content, supplied as external reference
     attribute extref { xsd:anyURI}?,
