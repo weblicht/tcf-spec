@@ -1,9 +1,10 @@
 default namespace = "http://www.dspin.de/data"
+namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
 element D-Spin { 
 
   attribute version { "0.4" },
-
+  attribute xsi:schemaLocation {text}?,
   external "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/metadata_0_4.rnc",
   external "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/extdata_0_4.rnc"?,
   (external "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/textcorpus_0_4.rnc" |

@@ -1,8 +1,10 @@
 default namespace = "http://www.dspin.de/data"
+namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
 element D-Spin { 
 
   attribute version { "0.4" },
+  attribute xsi:schemaLocation {text}?,
 
   external "metadata_0_4.rnc",
   external "extdata_0_4.rnc"?,

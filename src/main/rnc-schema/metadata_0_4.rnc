@@ -3,16 +3,19 @@ namespace cmd = "http://www.clarin.eu/cmd/"
 namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
 start =
-    element MetaData {(
-      element Services { CMD }? # use this element for wrapping chain CMD
-      &
-      element md { # deprecated, don't use it (left for backward compatibility)
-        attribute name { xsd:string },
-        attribute value { xsd:string }
-      }*
-      &
-      element source { text }?  # deprecated, don't use it (left for backward compatibility)
-  )}
+    element MetaData {
+      attribute xsi:schemaLocation {text}?,
+      (
+        element Services { CMD }? # use this element for wrapping chain CMD
+        &
+        element md { # deprecated, don't use it (left for backward compatibility)
+          attribute name { xsd:string },
+          attribute value { xsd:string }
+        }*
+        &
+        element source { text }?  # deprecated, don't use it (left for backward compatibility)
+      )
+    }
 
 # Original schema is xsd schema, here converted to rnc. The converted version might be not complete.
 # For original schema see:
