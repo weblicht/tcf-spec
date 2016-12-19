@@ -1,5 +1,6 @@
 default namespace = "http://www.dspin.de/data/metadata"
 namespace cmd = "http://www.clarin.eu/cmd/"
+namespace cmd12 = "http://www.clarin.eu/cmd/1"
 namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
 start =
@@ -173,8 +174,159 @@ CMD =
             }
             
           }
+        } |
+    element cmd12:CMD {
+          attribute CMDVersion { "1.2" },
+          attribute xsi:schemaLocation {  "http://www.clarin.eu/cmd/1 http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd" },
+
+          element cmd12:Header {
+              element cmd12:MdCreator { xsd:string }*,
+              element cmd12:MdCreationDate { xsd:date }?,
+              element cmd12:MdSelfLink { xsd:anyURI }?,
+              element cmd12:MdProfile { xsd:anyURI }?,
+              element cmd12:MdCollectionDisplayName { xsd:string }?
+          }?,
+
+          element cmd12:Resources {
+            element cmd12:ResourceProxyList {
+                element cmd12:ResourceProxy {
+                    attribute id { xsd:ID },
+                    element ResourceType {
+                        attribute mimetype { xsd:string }
+                    },
+                    element ResourceRef { xsd:anyURI }
+                }*
+            },
+            element cmd12:JournalFileProxyList {
+                element cmd12:JournalFileProxy {
+                    element cmd12:JournalFileRef { xsd:anyURI }
+                }*
+            },
+            element cmd12:ResourceRelationList {
+                element cmd12:ResourceRelation {
+                    element cmd12:RelationType { any },
+                    element cmd12:Res1 { attribute ref { xsd:IDREF } },
+                    element cmd12:Res2 { attribute ref { xsd:IDREF } }
+                }*
+            },
+            element cmd12:IsPartOfList {
+                element cmd12:ResourceRelation {
+                    element cmd12:IsPartOf { xsd:anyURI }*
+                }
+            }?
+          },
+
+          element cmd12:Components {
+
+            element cmd12:WebServiceToolChain {
+
+              attribute ref { xsd:IDREFS }?,
+              element cmd12:GeneralInfo {(
+                  element cmd12:ResourceName {
+                      attribute lang { xsd:language }?,
+                      xsd:string
+                  }*
+                  &
+                  element cmd12:ResourceTitle {
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd12:ResourceClass { xsd:NCName }*
+                  &
+                  element cmd12:Version {
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd12:LifeCycleStatus { xsd:string }?
+                  &
+                  element cmd12:StartYear { xsd:gYear }?
+                  &
+                  element cmd12:CompletionYear { xsd:gYear }?
+                  &
+                  element cmd12:PublicationDate { xsd:string }?
+                  &
+                  element cmd12:LastUpdate { xsd:string }?
+                  &
+                  element cmd12:TimeCoverage {
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd12:LegalOwner {
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd12:Genre {
+                      attribute lang { xsd:language },
+                      xsd:string
+                  }*
+                  &
+                  element cmd12:Location {
+                      attribute ref { xsd:IDREFS },
+                      attribute ComponentId { xsd:anyURI },
+                      element cmd12:Address {
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }*,
+                      element cmd12:Region {
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }*,
+                      element cmd12:ContinentName {
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }*,
+                      element cmd12:Country {
+                          attribute ref { xsd:IDREFS },
+                          attribute ComponentId { xsd:anyURI },
+                          element cmd12:CountryName {
+                              attribute lang { xsd:language },
+                              xsd:string
+                          }+,
+                          element cmd12:CountryCoding { xsd:NCName }
+                      }
+                  }?
+                  &
+                  element cmd12:Descriptions {
+                      attribute ref { xsd:IDREFS }?,
+                      attribute ComponentId { xsd:anyURI }?,
+                      element cmd12:Description {
+                          attribute type {"short" | "long"}?,
+                          attribute lang { xsd:language }?
+                      }+
+                  }?
+                  &
+                  element cmd12:Tags {
+                      attribute ref { xsd:IDREFS },
+                      attribute ComponentId { xsd:anyURI },
+                      element cmd12:tag {
+                          attribute lang { xsd:language },
+                          xsd:string
+                      }+
+                  }?
+              )},
+
+              element cmd12:Toolchain {
+                  attribute ref { xsd:IDREFS }?,
+                  attribute ComponentId { xsd:anyURI }?,
+                  element cmd12:ToolInChain {
+                      attribute ref { xsd:IDREFS }?,
+                      attribute ComponentId { xsd:anyURI }?,
+                      element cmd12:PID { xsd:anyURI },
+                      element cmd12:Parameter {
+                          attribute name { xsd:string },
+                          attribute value { xsd:string }
+                     }*
+                  }+
+              }
+
+            }
+
+          }
         }
-        
         
 any = 
     element * { 
