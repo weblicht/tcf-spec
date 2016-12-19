@@ -23,8 +23,8 @@ start =
 # http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd
 CMD =
         element cmd:CMD {
-          attribute CMDVersion { "1.1" },
-          attribute xsi:schemaLocation { "http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd" },
+          attribute CMDVersion { "1.1" | "1.2" },
+          attribute xsi:schemaLocation { "http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd" | "http://www.clarin.eu/cmd/1 http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd" },
           
           element cmd:Header {
               element cmd:MdCreator { xsd:string }*,
