@@ -25,6 +25,19 @@
       <tag>HEAD</tag>
     </scm>
 
+    <distributionManagement>
+       <repository>
+            <id>sfs-clarind-nexus</id>
+            <name>Internal Releases</name>
+            <url>http://t.weblicht.sfs.uni-tuebingen.de/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>sfs-clarind-nexus-snapshot</id>
+            <name>Snapshot Releases</name>
+            <url>http://t.weblicht.sfs.uni-tuebingen.de/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
     <organization>
         <name>Department of Linguistics, Tübingen University</name>
