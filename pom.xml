@@ -5,7 +5,7 @@
 
     <groupId>eu.clarin.weblicht</groupId>
     <artifactId>TCF</artifactId>
-    <version>0.4.7</version>
+    <version>0.4.7-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>TCF</name>
@@ -17,7 +17,15 @@
         The format is used for linguistically annotated data exchange within 
         WebLicht architecture.
     </description>
-    
+
+     <scm>
+        <url>git@github.com:weblicht/tcf-spec.git</url>
+        <connection>scm:git:git@github.com:weblicht/tcf-spec.git</connection>
+        <developerConnection>scm:git:git@github.com:weblicht/tcf-spec.git</developerConnection>
+      <tag>HEAD</tag>
+    </scm>
+
+
     <organization>
         <name>Department of Linguistics, Tübingen University</name>
         <url>http://www.sfs.uni-tuebingen.de/</url>
