@@ -4,9 +4,9 @@
   <MetaData xmlns="http://www.dspin.de/data/metadata">
     <source/>
     <Services>
-      <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/"
-        CMDVersion="1.1"
-        xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd">
+      <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/1"
+        CMDVersion="1.2"
+        xsi:schemaLocation="http://www.clarin.eu/cmd/1 http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd">
         <Header/>
         <Resources>
           <ResourceProxyList/>
