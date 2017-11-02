@@ -30,7 +30,6 @@ public class ValidateExamplesTest {
         "/corpus.xml",
         "/corpus_extdata.xml",
         "/tcf04-karin-wl.xml",
-        "/tcf04-karin-wl-12.xml",
         "/lex04-karin-wl.xml"
     };
     public static final String WebLEAF_SCHEMA_LOCATION = "/d-spin-local_0_4.rnc";
