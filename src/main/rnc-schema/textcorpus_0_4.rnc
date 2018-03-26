@@ -49,10 +49,12 @@ tokens =
       (attribute start { xsd:int },
        attribute end   { xsd:int })?,
       attribute ID    { xsd:ID }?,
+      attribute surfaceForm { xsd:string }?,
+      attribute parts { xsd:IDREFS }?,
       xsd:string
     }*
   }
-  
+
 
 # CHANGES:
 # typo in operation value corrected: detele -> delete;
@@ -104,7 +106,6 @@ lemmas =
       xsd:string
     }*
   }
-
   
 parsing =
   element parsing {
@@ -227,6 +228,7 @@ Phonetics =
 # attribute segmentation is added to declare the use of morphology segmentation sub-element
 morphology =
   element morphology {
+        attribute tagset  {xsd:string }?,
   	attribute segmentation { "true" }?,
     attribute charOffsets { "true" }?,
     analysis*
@@ -236,8 +238,9 @@ analysis =
   element analysis {
     attribute tokenIDs { xsd:IDREFS },
     element tag {
+      attribute score { xsd:double }?,
       fs
-    },
+    }+,
     segmentation?
   }
 
@@ -318,6 +321,21 @@ extref =
    # id of the external reference, e.g. url of a Wikipedia article for the entity, id of the entity in a database, etc.:
     attribute refid { xsd:string }  
   } 
+
+
+# chunk layer
+chunks =
+  element chunks {
+     attribute tagset { xsd:string },
+     element chunk {
+       attribute type { xsd:string }?,
+       attribute voice { xsd:string }?,
+       attribute tense { xsd:string }?,
+       attribute ID    { xsd:ID }?,
+       attribute tokenIDs { xsd:IDREFS }
+     }*
+  }
+
 
 # reference represented by a mention (token sequence) that refers to an entity (to its parent element 'entity')
 reference =
