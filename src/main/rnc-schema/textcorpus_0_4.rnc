@@ -6,7 +6,7 @@ start =
     attribute lang { xsd:language },
     
     (\text? & tokens? & sentences? & POStags? & lemmas? & parsing? &
-     depparsing? & relations? & namedEntities? &
+     depparsing? & relations? & namedEntities? & chunks? &
      morphology? 
      # QueryResults? are relpaved by matches 
      & matches?
@@ -107,15 +107,15 @@ lemmas =
     }*
   }
 
-# chunk layer
 chunks =
   element chunks {
      attribute tagset { xsd:string },
-    element chunk {
-      attribute type { xsd:string },
-      attribute * { xsd:string }*,
-      attribute ID    { xsd:ID }?,
-      attribute tokenIDs { xsd:IDREFS }
+     element chunk {
+       attribute type { xsd:string }?,
+       attribute voice { xsd:string }?,
+       attribute tense { xsd:string }?,
+       attribute ID    { xsd:ID }?,
+       attribute tokenIDs { xsd:IDREFS }
      }*
   }
   
