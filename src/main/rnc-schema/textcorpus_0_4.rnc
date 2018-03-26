@@ -106,14 +106,6 @@ lemmas =
       xsd:string
     }*
   }
-
-chunks =
-  element chunks {
-     attribute tagset { xsd:string },
-     element chunk {
-       attribute * { xsd:string }+
-     }*
-  }
   
 parsing =
   element parsing {
@@ -210,6 +202,17 @@ namedEntities =
      attribute tokenIDs { xsd:IDREFS }
     }*
   }
+
+
+chunks =
+  element chunks {
+     attribute tagset { xsd:string },
+     element chunk {
+       attribute * - tokenIDs { xsd:string }+,
+       attribute tokenIDs { xsd:IDREFS }
+     }*
+  }
+
 
 WordSplittings =
   element WordSplittings {
