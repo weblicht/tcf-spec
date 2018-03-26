@@ -433,7 +433,7 @@
         </namedEntities>
         <chunks tagset="tagset">
             <chunk type="NP" tokenIDs="t_0"/>
-            <chunk type="VP" voice="none" tense="present" tokenIDs="t_1"/>
+            <chunk type="VP" voice="none" tense="present" baseForm="baseForm" modifiedForm="modifiedForm" tokenIDs="t_1"/>
             <chunk type="PP" tokenIDs="t_2 t_3 t_4"/>
         </chunks>
         <references typetagset="BART" reltagset="TuebaDZ">

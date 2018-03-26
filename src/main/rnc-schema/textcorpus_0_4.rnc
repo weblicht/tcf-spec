@@ -111,11 +111,7 @@ chunks =
   element chunks {
      attribute tagset { xsd:string },
      element chunk {
-       attribute type { xsd:string }?,
-       attribute voice { xsd:string }?,
-       attribute tense { xsd:string }?,
-       attribute ID    { xsd:ID }?,
-       attribute tokenIDs { xsd:IDREFS }
+       attribute * { xsd:string }+
      }*
   }
   
