@@ -29,7 +29,8 @@ public class ValidateExamplesTest {
     private static final String[] INPUT_FILES_FOR_READ = new String[]{
         "/corpus.xml",
         "/corpus_extdata.xml",
-        "/tcf04-karin-wl_1_1.xml",
+        "/tcf04-karin-wl.xml",
+        "/tcf04-karin-wl_extension.xml",
         "/lex04-karin-wl.xml"
     };
     public static final String WebLEAF_SCHEMA_LOCATION = "/d-spin-local_0_4.rnc";
