@@ -96,11 +96,6 @@
             <tag ID="pt_10" tokenIDs="t_10">VVINF</tag>
             <tag ID="pt_11" tokenIDs="t_11">$.</tag>
         </POStags>
-        <chunks tagset="tagset" xmlns="http://www.dspin.de/data/textcorpus">
-            <chunk type="NP" tokenIDs="t_0"/>
-            <chunk type="VP" voice="none" tense="present" tokenIDs="t_1"/>
-            <chunk type="PP" tokenIDs="t_2 t_3 t_4"/>
-        </chunks>
         <parsing tagset="tigertb">
             <parse>
                 <constituent cat="Start" ID="c_15">
