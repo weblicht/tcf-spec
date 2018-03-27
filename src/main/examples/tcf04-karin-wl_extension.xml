@@ -115,6 +115,11 @@
             <tag ID="pt_16" tokenIDs="t_16">NN</tag>
             <tag ID="pt_17" tokenIDs="t_17">$.</tag>
         </POStags>
+        <chunks tagset="tagset" xmlns="http://www.dspin.de/data/textcorpus">
+            <chunk type="NP" tokenIDs="t_0"/>
+            <chunk type="VP" voice="none" tense="present" baseForm="baseForm" alterForm="alterForm" tokenIDs="t_1"/>
+            <chunk type="PP" tokenIDs="t_2 t_3 t_4"/>
+        </chunks>
         <parsing tagset="penntb">
             <parse>
                 <constituent cat="VROOT" ID="c_14">
@@ -431,11 +436,6 @@
             <entity tokenIDs="t_0" class="PER"></entity>
             <entity tokenIDs="t_3 t_4" class="LOC"></entity>
         </namedEntities>
-        <chunks tagset="tagset">
-            <chunk type="NP" tokenIDs="t_0"/>
-            <chunk type="VP" voice="none" tense="present" baseForm="baseForm" modifiedForm="modifiedForm" tokenIDs="t_1"/>
-            <chunk type="PP" tokenIDs="t_2 t_3 t_4"/>
-        </chunks>
         <references typetagset="BART" reltagset="TuebaDZ">
             <entity>
                 <reference ID="rc_0" tokenIDs="t_0" mintokIDs="t_0" type="nam"/>
