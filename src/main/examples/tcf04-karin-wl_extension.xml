@@ -71,9 +71,9 @@
             <token ID="t_17">.</token>
         </tokens>
         <sentences>
-            <sentence ID="s_0" tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5"/>
-            <sentence ID="s_1" tokenIDs="t_6 t_7 t_8 t_9 t_10 t_11"/>
-            <sentence tokenIDs="t_12 t_13 t_14 t_15 t_16 t_17"></sentence>
+           <sentence ID="s_0" tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5"/>
+           <sentence ID="s_1" tokenIDs="t_6 t_7 t_8 t_9 t_10 t_11"/>
+           <sentence ID="s_2" tokenIDs="t_12 t_13 t_14 t_15 t_16 t_17"/>
         </sentences>
         <lemmas>
             <lemma ID="l_0" tokenIDs="t_0">Karin</lemma>
