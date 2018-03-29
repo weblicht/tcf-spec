@@ -209,7 +209,7 @@ chunks =
   element chunks {
      attribute tagset { xsd:string },
      element chunk {
-       attribute * - tokenIDs { xsd:string }+,
+       attribute * - tokenIDs { xsd:string }*,
        attribute tokenIDs { xsd:IDREFS }
      }*
   }
