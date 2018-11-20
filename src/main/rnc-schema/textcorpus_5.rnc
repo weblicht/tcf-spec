@@ -6,7 +6,7 @@ start =
     attribute lang { xsd:language },
     
     (\text? & tokens? & sentences? & POStags? & lemmas? & parsing? &
-     depparsing? & relations? & namedEntities? &
+     depparsing? & relations? & namedEntities? & chunks? &
      morphology? 
      # QueryResults? are relpaved by matches 
      & matches?
@@ -45,13 +45,16 @@ textspan =
 tokens =
   element tokens {
     attribute charOffsets { "true" }?,
-    element token {
+     element token {
       (attribute start { xsd:int },
-       attribute end   { xsd:int })?,
+      attribute end   { xsd:int })?,
       attribute ID    { xsd:ID }?,
+      attribute surfaceForm { xsd:string }?,
+      attribute parts { xsd:IDREFS }?,
       xsd:string
     }*
   }
+
   
 
 # CHANGES:
@@ -202,6 +205,17 @@ namedEntities =
     }*
   }
 
+chunks =
+  element chunks {
+     attribute tagset { xsd:string },
+     element chunk {
+       attribute type { xsd:string },
+       attribute ID    { xsd:ID }?,
+       attribute tokenIDs { xsd:IDREFS },
+       attribute * - (tokenIDs|type|ID) { xsd:string }*
+     }*
+  }
+
 WordSplittings =
   element WordSplittings {
      attribute type { xsd:string },
@@ -227,7 +241,8 @@ Phonetics =
 # attribute segmentation is added to declare the use of morphology segmentation sub-element
 morphology =
   element morphology {
-  	attribute segmentation { "true" }?,
+    attribute tagset  {xsd:string }?,
+    attribute segmentation { "true" }?,
     attribute charOffsets { "true" }?,
     analysis*
   }
@@ -236,8 +251,9 @@ analysis =
   element analysis {
     attribute tokenIDs { xsd:IDREFS },
     element tag {
+      attribute score { xsd:double }?,
       fs
-    },
+    }+,
     segmentation?
   }
 

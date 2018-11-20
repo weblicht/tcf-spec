@@ -1,0 +1,15 @@
+default namespace = "http://www.dspin.de/data"
+namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
+
+element D-Spin { 
+
+  attribute version { "5" },
+  attribute xsi:schemaLocation {text}?,
+  external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/metadata_0_4.rnc",
+  external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/extdata_0_4.rnc"?,
+  (external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/textcorpus_5.rnc" |
+   external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/lexicon_0_4.rnc")
+   
+}
+
+
