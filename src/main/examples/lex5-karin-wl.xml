@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="5">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+    <source/>
+  </MetaData>
+  <Lexicon xmlns="http://www.dspin.de/data/lexicon" lang="de">
+    <entries type="types">
+      <entry ID="e_0">Karin</entry>
+      <entry ID="e_1">fliegt</entry>
+      <entry ID="e_2">nach</entry>
+      <entry ID="e_3">New</entry>
+      <entry ID="e_4">York</entry>
+      <entry ID="e_5">.</entry>
+      <entry ID="e_6">Sie</entry>
+      <entry ID="e_7">will</entry>
+      <entry ID="e_8">dort</entry>
+      <entry ID="e_9">Urlaub</entry>
+      <entry ID="e_10">machen</entry>
+    </entries>
+    <frequencies type="per-million">
+      <frequency entryID="e_0">2.4525236988</frequency>
+      <frequency entryID="e_1">7.07144333153</frequency>
+      <frequency entryID="e_2">2502.6941586</frequency>
+      <frequency entryID="e_3">13.1537021046</frequency>
+      <frequency entryID="e_4">3.44170825731</frequency>
+      <frequency entryID="e_5">41282.3177121</frequency>
+      <frequency entryID="e_6">2242.86562287</frequency>
+      <frequency entryID="e_7">413.822498777</frequency>
+      <frequency entryID="e_8">319.686464138</frequency>
+      <frequency entryID="e_9">17.8870728432</frequency>
+      <frequency entryID="e_10">201.8870728432</frequency>
+    </frequencies>
+    <syllabifications>
+      <syllabification entryID="e_0">ka-rin</syllabification>
+      <syllabification entryID="e_1">fliegt</syllabification>
+      <syllabification entryID="e_2">nach</syllabification>
+      <syllabification entryID="e_3">new</syllabification>
+      <syllabification entryID="e_4">york</syllabification>
+      <syllabification entryID="e_5">.</syllabification>
+      <syllabification entryID="e_6">sie</syllabification>
+      <syllabification entryID="e_7">will</syllabification>
+      <syllabification entryID="e_8">dort</syllabification>
+      <syllabification entryID="e_9">ur-laub</syllabification>
+      <syllabification entryID="e_10">ma-chen</syllabification>
+    </syllabifications>
+    <cooccurrences>
+      <cooccurrence func="right-neighbour">
+        <sig measure="sig">92.63</sig>
+        <term entryID="e_2"/>
+        <term>Berlin</term>
+      </cooccurrence>
+      <cooccurrence func="right-neighbour">
+        <sig measure="sig">82.18</sig>
+        <term entryID="e_2"/>
+        <term>.</term>
+      </cooccurrence>
+      <cooccurrence func="right-neighbour">
+        <sig measure="sig">46.19</sig>
+        <term entryID="e_2"/>
+        <term>London</term>
+      </cooccurrence>
+    </cooccurrences>
+    <synonyms>
+      <synonym>
+        <sig measure="sig">50.63</sig>
+        <term entryID="e_1"/>
+        <term>flattern</term>
+      </synonym>
+      <synonym>
+        <sig measure="sig">71.31</sig>
+        <term entryID="e_1"/>
+        <term>hinausfliegen</term>
+      </synonym>
+      <synonym>
+        <sig measure="sig">92.05</sig>
+        <term entryID="e_10"/>
+        <term>tun</term>
+      </synonym>
+      <synonym>
+        <sig measure="sig">72.72</sig>
+        <term entryID="e_10"/>
+        <term>schaffen</term>
+      </synonym>
+      <synonym>
+        <sig measure="sig">62.69</sig>
+        <term entryID="e_10"/>
+        <term>treiben</term>
+      </synonym>
+    </synonyms>
+  </Lexicon>
+</D-Spin>

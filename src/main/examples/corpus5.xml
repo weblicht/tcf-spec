@@ -4,7 +4,7 @@
 <?xml-model href="d-spin-local_5.rnc" type="application/relax-ng-compact-syntax"?>
 <?xml-model href="d-spin-local_5.rnc" type="application/relax-ng-compact-syntax"?>
 <?xml-model href="d-spin-local_5.rnc" type="application/relax-ng-compact-syntax"?>
-<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+<D-Spin xmlns="http://www.dspin.de/data" version="5">
 
     <MetaData xmlns="http://www.dspin.de/data/metadata">
         <source>IMS, Uni Stuttgart</source>
