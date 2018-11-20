@@ -241,7 +241,7 @@ Phonetics =
 # attribute segmentation is added to declare the use of morphology segmentation sub-element
 morphology =
   element morphology {
-    attribute tagset  {xsd:string }?,
+    attribute tagset  {xsd:string },
     attribute segmentation { "true" }?,
     attribute charOffsets { "true" }?,
     analysis*

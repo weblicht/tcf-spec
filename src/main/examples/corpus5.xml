@@ -105,7 +105,7 @@
             <lemma ID="l9" tokenIDs="t9">.</lemma>
         </lemmas>
    
-        <morphology segmentation="true">
+        <morphology tagset="STTS" segmentation="true">
             <analysis tokenIDs="t4">
                 <tag>
                     <fs>
