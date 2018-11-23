@@ -5,10 +5,10 @@ element D-Spin {
 
   attribute version { "5" },
   attribute xsi:schemaLocation {text}?,
-  external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/metadata_0_4.rnc",
-  external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/extdata_0_4.rnc"?,
-  (external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/textcorpus_5.rnc" |
-   external "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/lexicon_0_4.rnc")
+  external "https://raw.githubusercontent.com/weblicht/tcf-spec/tcf-extension/src/main/rnc-schema/metadata_0_4.rnc",
+  external "https://raw.githubusercontent.com/weblicht/tcf-spec/tcf-extension/src/main/rnc-schema/extdata_0_4.rnc"?,
+  (external "https://raw.githubusercontent.com/weblicht/tcf-spec/tcf-extension/src/main/rnc-schema/textcorpus_5.rnc" |
+   external "https://raw.githubusercontent.com/weblicht/tcf-spec/tcf-extension/src/main/rnc-schema/lexicon_0_4.rnc")
    
 }
 
