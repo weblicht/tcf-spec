@@ -139,7 +139,7 @@ constituent =
 
 #depparsing =
 #  element depparsing {
-#    attribute tagset { xsd:string }?,
+#    attribute tagset { xsd:string },
 #    element parse {
 #      attribute ID    { xsd:ID }?,
 #      element dependency {
@@ -153,7 +153,7 @@ constituent =
 #CHANGES from 08.12.2011 to account for dependency structures with empty elements 
 depparsing =
   element depparsing {
-    attribute tagset { xsd:string }?, # tagset for labelling dependency functions
+    attribute tagset { xsd:string }, # tagset for labelling dependency functions
     attribute multigovs { xsd:boolean }, # whether multiple governors for a token can occur in the parses
     attribute emptytoks { xsd:boolean }, # whether dummy empty tokens (dependents or governors) can occur
     element parse {
