@@ -120,6 +120,11 @@
             <chunk ID="ch_1" type="VP" voice="none" tense="present" baseForm="baseForm" alterForm="alterForm" tokenIDs="t_1"/>
             <chunk ID="ch_2" type="PP" tokenIDs="t_2 t_3 t_4"/>
         </chunks>
+        <topologicalFields tagset="TAGSET01" xmlns="http://www.dspin.de/data/textcorpus">
+            <topologicalField tokenIDs="t1">VALUE01</topologicalField>
+            <topologicalField tokenIDs="t2">Value02</topologicalField>
+            <topologicalField tokenIDs="t3">value03</topologicalField>
+        </topologicalFields>
         <parsing tagset="penntb">
             <parse>
                 <constituent cat="VROOT" ID="c_14">
@@ -235,7 +240,7 @@
             </parse>
         </depparsing>
         <morphology tagset="STTS">
-            <analysis tokenIDs="t_0"> 
+            <analysis tokenIDs="t_0">
                 <tag score="0.8">
                     <fs>
                         <f name="cat">proper name</f>
@@ -478,7 +483,7 @@
         </geo>
         <Phonetics transcription="IPA">
             <pron tokID="t_9">ˈuːɐ̯ˌlaʊ̯p</pron>
-        </Phonetics> 
+        </Phonetics>
         <textstructure>
             <textspan start="t_0" end="t_5" type="page"/>
             <textspan type="line"/>

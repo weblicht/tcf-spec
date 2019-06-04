@@ -6,8 +6,9 @@ start =
     attribute lang { xsd:language },
     
     (\text? & tokens? & sentences? & POStags? & lemmas? & parsing? &
-     depparsing? & relations? & namedEntities? & chunks? &
-     morphology? 
+     depparsing? & relations? & namedEntities? & chunks?
+     & topologicalFields?
+     & morphology?
      # QueryResults? are relpaved by matches 
      & matches?
      & WordSplittings? & Phonetics? 
@@ -214,6 +215,16 @@ chunks =
        attribute tokenIDs { xsd:IDREFS },
        attribute * - (tokenIDs|type|ID) { xsd:string }*
      }*
+  }
+
+topologicalFields =
+  element topologicalFields {
+    attribute tagset { xsd:string },
+    element topologicalField {
+      attribute ID    { xsd:ID }?,
+      attribute tokenIDs { xsd:IDREFS },
+      xsd:string
+    }*
   }
 
 WordSplittings =
