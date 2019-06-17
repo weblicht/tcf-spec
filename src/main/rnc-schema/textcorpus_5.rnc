@@ -220,7 +220,7 @@ chunks =
 topologicalFields =
   element topologicalFields {
     attribute tagset { xsd:string },
-    element tfield {
+    element field {
       attribute ID    { xsd:ID }?,
       attribute tokenIDs { xsd:IDREFS },
       xsd:string
