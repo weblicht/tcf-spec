@@ -121,9 +121,9 @@
             <chunk ID="ch_2" type="PP" tokenIDs="t_2 t_3 t_4"/>
         </chunks>
         <topologicalFields tagset="TAGSET01" xmlns="http://www.dspin.de/data/textcorpus">
-            <topologicalField tokenIDs="t1">VALUE01</topologicalField>
-            <topologicalField tokenIDs="t2">Value02</topologicalField>
-            <topologicalField tokenIDs="t3">value03</topologicalField>
+            <field tokenIDs="t1">VALUE01</field>
+            <field tokenIDs="t2">Value02</field>
+            <field tokenIDs="t3">value03</field>
         </topologicalFields>
         <parsing tagset="penntb">
             <parse>
