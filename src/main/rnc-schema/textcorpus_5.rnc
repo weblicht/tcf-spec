@@ -1,0 +1,526 @@
+default namespace = "http://www.dspin.de/data/textcorpus"
+
+start =
+  element TextCorpus {
+
+    attribute lang { xsd:language },
+    
+    (\text? & tokens? & sentences? & POStags? & lemmas? & parsing? &
+     depparsing? & relations? & namedEntities? & chunks?
+     & topologicalFields?
+     & morphology?
+     # QueryResults? are relpaved by matches 
+     & matches?
+     & WordSplittings? & Phonetics? 
+     # coreferences? are relpaced by references? 
+     & references? 
+     # lex-sem-rels are splitted into separate layers
+     & synonymy? & antonymy? & hyponymy? & hyperonymy?
+     & orthography? & geo? & textstructure?
+     & discourseconnectives? & wsd?
+     & textSource?
+     )
+  }
+
+\text = element \text { 
+   xsd:string
+}
+
+# a layer when input text has initial structure that needs to be preserver
+textstructure =
+  element textstructure {
+    textspan*
+  }
+  
+  
+textspan =
+ element textspan {
+      (attribute startChar { xsd:nonNegativeInteger }, # character offset of the span start in text
+      attribute endChar   { xsd:nonNegativeInteger })?, # character offset of the span end in text
+      attribute start { xsd:ID }?,
+      attribute end { xsd:ID }?,
+      attribute type { xsd:string },  # type of this textstructure span, e.g. page, title, paragraph, footnote, etc.
+      (xsd:string | textspan*) # textspan can (optionally) contain a value or nest another textspan elements
+    }*
+
+tokens =
+  element tokens {
+    attribute charOffsets { "true" }?,
+     element token {
+      (attribute start { xsd:int },
+      attribute end   { xsd:int })?,
+      attribute ID    { xsd:ID }?,
+      attribute surfaceForm { xsd:string }?,
+      attribute parts { xsd:IDREFS }?,
+      xsd:string
+    }*
+  }
+
+  
+
+# CHANGES:
+# typo in operation value corrected: detele -> delete;
+# a layer for corrections of orthographic errors in tokens layer
+orthography =
+  element orthography {
+    # a correction of a token/tokens orthographic errors
+    element correction {
+        attribute ID { xsd:ID }?,
+        # reference to token/tokens that are corrected
+        attribute tokenIDs { xsd:IDREFS }?,
+        # operation to be done with specified in tokenIDs token/tokens in order to correct:
+        attribute operation { "replace" | "insert-before" | "insert-after" | "delete" },
+        # correction string:
+        xsd:string
+    }*
+  }
+
+
+sentences =
+  element sentences {
+    attribute charOffsets { "true" }?,
+    element sentence {
+      attribute ID    { xsd:ID }?,
+      (attribute start { xsd:int },
+       attribute end   { xsd:int })?,
+      attribute tokenIDs   { xsd:IDREFS }
+    }*
+  }
+
+POStags =
+  element POStags {
+    attribute tagset { xsd:string },
+    element tag {
+      attribute ID    { xsd:ID }?,
+      attribute tokenIDs { xsd:IDREFS },
+      xsd:string
+    }*
+  }
+
+lemmas =
+  element lemmas {
+    # attribute reftype { "tokens" | "tags" },
+    element lemma {
+      attribute ID    { xsd:ID }?,
+      attribute tokenIDs { xsd:IDREFS },
+      # (attribute tokenIDs { xsd:IDREFS } |
+      #  attribute tagID { xsd:IDREF }),
+      xsd:string
+    }*
+  }
+
+  
+parsing =
+  element parsing {
+    attribute tagset { xsd:string },
+    element parse {
+      attribute ID    { xsd:ID }?,
+      constituent
+    }*
+  }
+
+# chnage from 2012 June: possibility to specify edge label added
+# change from 2012 July: possibility to specify secondary edges added
+constituent =
+  element constituent {
+    # node label
+    attribute cat { xsd:string },
+    # edge label from this node to the parent node
+    attribute edge { xsd:string }?,
+    attribute ID { xsd:ID }?,
+    # secondary edge to another constituent
+    element cref {
+        attribute constID {xsd:ID}, # target constituent ID
+        attribute edge { xsd:string } # secondary edge label
+    }*,
+    (attribute tokenIDs { xsd:IDREFS } | constituent*)
+  }
+
+
+
+#depparsing =
+#  element depparsing {
+#    attribute tagset { xsd:string },
+#    element parse {
+#      attribute ID    { xsd:ID }?,
+#      element dependency {
+#        attribute func { xsd:string }?,
+#        attribute depIDs { xsd:IDREFS },
+#        attribute govIDs { xsd:IDREFS }
+#      }+
+#    }+
+#  }
+
+#CHANGES from 08.12.2011 to account for dependency structures with empty elements 
+depparsing =
+  element depparsing {
+    attribute tagset { xsd:string }, # tagset for labelling dependency functions
+    attribute multigovs { xsd:boolean }, # whether multiple governors for a token can occur in the parses
+    attribute emptytoks { xsd:boolean }, # whether dummy empty tokens (dependents or governors) can occur
+    element parse {
+      attribute ID { xsd:ID }?,
+      element dependency {
+        attribute func { xsd:string }?,
+        attribute depIDs { xsd:IDREFS },
+        attribute govIDs { xsd:IDREFS }?
+       }*,
+      element emptytoks { # need to put only in case dummy empty token(s) is(are) added to this parse
+        element emptytok {
+            attribute ID { xsd:string },
+             xsd:string?
+          }+
+      }?
+    }*
+  }
+
+
+relations =
+  element relations {
+    attribute type { xsd:string },
+    element relation {
+      attribute ID   { xsd:ID }?,
+      attribute func { xsd:string }?,
+      attribute refIDs { xsd:IDREFS }
+    }*
+  }
+  
+  
+  
+# CHANGES:
+# attribute type is added to differentiate between different entity type annotations
+# e.g. type="MUC1990" presupposes PERSON, LOCATION, ORGANIZATION, DATE, TIME, MONEY, PERCENT entity annotations
+# e.g. type="ENAMEX" presupposes PERSON, LOCATION, ORGANIZATION entity annotations
+# e.g. type="TIMEX" presupposes DATE, TIME entity annotations
+# e.g. type="NUMEX" presupposes MONEY, PERCENT entity annotations
+# e.g. type="CoNLL2002" presupposes PER, LOC, ORG, MISC entity annotations
+namedEntities =
+  element namedEntities {
+  	attribute type { xsd:string },
+    attribute charOffsets { "true" }?,
+    element entity {
+     attribute class { xsd:string },
+     attribute ID    { xsd:ID }?,
+     (attribute start { xsd:int },
+      attribute end   { xsd:int })?,
+     attribute tokenIDs { xsd:IDREFS }
+    }*
+  }
+
+chunks =
+  element chunks {
+     attribute tagset { xsd:string },
+     element chunk {
+       attribute type { xsd:string },
+       attribute ID    { xsd:ID }?,
+       attribute tokenIDs { xsd:IDREFS },
+       attribute * - (tokenIDs|type|ID) { xsd:string }*
+     }*
+  }
+
+topologicalFields =
+  element topologicalFields {
+    attribute tagset { xsd:string },
+    element field {
+      attribute ID    { xsd:ID }?,
+      attribute tokenIDs { xsd:IDREFS },
+      xsd:string
+    }*
+  }
+
+WordSplittings =
+  element WordSplittings {
+     attribute type { xsd:string },
+     element split {
+       attribute tokID { xsd:IDREF },
+       list { xsd:int+ }
+     }*
+  }
+
+# CHANGES:
+# attribute transcription is added to differentiate between different pronunciation systems
+# e.g. transcription="IPA" presupposes the use of IPA alphabet in the transcribed words
+Phonetics =
+  element Phonetics {
+  	attribute transcription { xsd:string },
+    element pron {
+      attribute tokID { xsd:IDREF },
+      xsd:string
+    }*
+  }
+
+# CHANGES:
+# attribute segmentation is added to declare the use of morphology segmentation sub-element
+morphology =
+  element morphology {
+    attribute tagset  {xsd:string },
+    attribute segmentation { "true" }?,
+    attribute charOffsets { "true" }?,
+    analysis*
+  }
+
+analysis =
+  element analysis {
+    attribute tokenIDs { xsd:IDREFS },
+    element tag {
+      attribute score { xsd:double }?,
+      fs
+    }+,
+    segmentation?
+  }
+
+fs =
+  element fs {
+    element f {
+      attribute name { xsd:string },
+      (xsd:string | fs) 
+    }+
+  }
+
+segmentation =
+  element segmentation {
+    segment+
+  }
+
+segment =
+  element segment {
+    attribute type { xsd:string }?,
+    attribute cat { xsd:string }?,
+    attribute func { xsd:string }?,
+    (attribute start { xsd:int },
+     attribute end   { xsd:int })?,
+    (xsd:string | segment+)
+  }
+  
+  
+#CHANGES - 'coreferences' are replaced by 'references' with possibility to specify relations between references:
+#coreferences =
+#  element coreferences {
+#    attribute tagset { xsd:string }, 
+#    attribute extrefs { xsd:string }?,
+#    referent*
+#  }
+#referent =
+#  element referent {
+#    attribute ID { xsd:ID }?,
+#    attribute type { xsd:string }?,
+#    extref?,
+#    coreference+
+#  }  
+#extref =
+#  element extref {
+#    attribute refid { xsd:string }
+#  }  
+#coreference =
+#  element coreference {
+#    attribute tokenIDs { xsd:IDREFS },
+#    attribute mintokIDs { xsd:IDREFS }?,
+#    attribute type { xsd:string }?,
+#    attribute srole { xsd:string }?
+#  }
+
+
+# a layer for representing reference relations between entity mentions in a text
+references =
+  element references {
+    # for the case when linguistic type of reference tokens is specified (i.e. tagset of type attribute of reference element):
+    attribute typetagset { xsd:string }?,
+    # for the case when relations between reference elements are specified (i.e. tagset of rel attribute of reference element):
+    attribute reltagset { xsd:string }?,
+    # for the case when entity (referent) is resolved to some entry in external source (i.e. source of external reference, e.g. wikipedia, id of some database, etc.):
+    attribute extrefs { xsd:string }?,
+    entity*
+  }
+
+# an entity (referent) to which some mention (token sequence) in a text refers to
+entity = 
+  element entity {
+    attribute ID { xsd:ID }?,
+    extref?,
+    reference+
+  }
+  
+# reference to an entity in an external source   
+extref =
+  element extref {
+   # id of the external reference, e.g. url of a Wikipedia article for the entity, id of the entity in a database, etc.:
+    attribute refid { xsd:string }  
+  } 
+
+# reference represented by a mention (token sequence) that refers to an entity (to its parent element 'entity')
+reference =
+  element reference {
+    attribute ID { xsd:ID }?,
+    # relation from this reference to another reference (to target reference), or to itself:
+    attribute rel { xsd:string }?,
+    # id of the target reference of the relation specified in rel attribute:
+    attribute target { xsd:IDREFS }?,
+    # ids of all the tokens this reference is represented by:
+    attribute tokenIDs { xsd:IDREFS },
+    # ids of all the head tokens of this reference:
+    attribute mintokIDs { xsd:IDREFS }?,
+    # the linguistic type of the mention (pronoun/nominal/name/demonstrative/zero pronoun, other/finer distinctions are possible):
+    attribute type { xsd:string }?
+  }
+
+#CHANGES - 'QueryResults' are replaced by 'matches':
+#QueryResults =
+#  element QueryResults {
+#    attribute query { xsd:string }?,
+#    match+
+#  }
+#match =
+#  element match {
+#    attribute tokenIDs   { xsd:IDREFS },
+#    element key {
+#      attribute tokenIDs   { xsd:IDREFS }
+#    }?
+#  }
+
+matches =
+    element matches {
+        element query {
+            attribute type { xsd:string }, # type of a query (query language)
+            xsd:string
+        },
+        element corpus {
+            attribute name { xsd:string }, # name of the corpus
+            attribute pid { xsd:string }, # pid of the corpus
+            item*
+        }+
+    }
+
+item = 
+    element item {
+        attribute tokenIDs   { xsd:IDREFS }, # reference to the tokens
+        attribute srcIDs { xsd:string }?, # reference to the original tokens from the original corpus
+        element target {
+            attribute name { xsd:string },
+            attribute value { xsd:string }
+        }*,
+        element category {
+            attribute name { xsd:string },
+            attribute value { xsd:string }
+        }*
+    }
+
+
+# The remaining declarations are needed for representing the
+# semantic relations from GermanNet
+#
+# CHANGES:
+# separate layers for each semantic (lexical) relation;
+# attribute tokenIDs is removed and attribute lemmaRefs is added.
+#
+# lemmaRefs attribute value should contain ids of all lemmas that
+# refer to the given orthform. I.e. orthform doesn't need to be
+# repeated more than once inside one semantic-lexical relation,
+# instead, the lemma reference is added to lemmaRefs list.
+
+synonymy =
+  element synonymy {
+      #attribute src { xsd:string },
+      orthform*
+  }
+  
+antonymy =
+  element antonymy {
+      #attribute src { xsd:string },
+      orthform*
+  }
+  
+hyponymy =
+  element hyponymy {
+      #attribute src { xsd:string },
+      orthform*
+  }
+  
+hyperonymy =
+  element hyperonymy {
+      #attribute src { xsd:string },
+      orthform*
+  }
+  
+orthform =
+element orthform {
+      attribute ID { xsd:ID }?,
+      attribute lemmaRefs { xsd:IDREFS },
+      xsd:string
+  }
+  
+  
+  
+# layer to specify geographical coordinates of an entity or of an event
+geo =
+element geo {
+      # According to http://en.wikipedia.org/wiki/Geographic_coordinate_conversion 3 basic types of longitude and latitude representation is
+      # 1) DMS - Coordinate containing degrees (integer), minutes (integer), and seconds (integer, or real number);
+      # 2) MinDec - Coordinate containing degrees (integer) and minutes (real number);
+      # 3) DegDec - Coordinate containing only degrees (real number).
+      # Extend the enumeration if other formats are to be supported
+      attribute coordFormat { "DegDec" | "MinDec" | "DMS" },
+      attribute continentFormat { "name" }?,
+      # According to http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html:
+      attribute countryFormat { "ISO3166_A2" | "ISO3166_A3" | "ISO3166_Number"}?,
+      attribute capitalFormat { "name" }?,
+      # source from where the coordinates are taken (database id, etc.)
+      element src { xsd:anyURI },
+      element gpoint {
+        attribute tokenIDs { xsd:IDREFS },
+        attribute lon { xsd:string },
+        attribute lat { xsd:string },
+        attribute alt { xsd:decimal }?,
+        attribute continent { xsd:string }?,
+        attribute country { xsd:string }?,
+        attribute capital { xsd:string }?
+      }*
+}
+
+
+# discourse connectives layer
+discourseconnectives =
+element discourseconnectives {
+    attribute tagset { xsd:string },
+    element connective {
+      # reference to the tokens
+      attribute tokenIDs   { xsd:IDREFS },
+      # semantic type of the connective
+      attribute type { xsd:string }? 
+    }*
+}
+
+# word-sense-disambiguation layer
+wsd =
+element wsd {
+     # source from where the word senses are taken, e.g. GermaNet8.0
+     attribute src { xsd:string },
+     element ws {
+          # reference to the tokens
+          attribute tokenIDs   { xsd:IDREFS },
+          # lexical units as lexical unit IDs in the source
+          attribute lexunits   { list { xsd:string+ } },
+          # comment for the word-sense
+          attribute comment { xsd:string }? 
+     }*
+}
+
+# The source of the text and/or tokens can be embedded here or
+# referred to as an external reference.
+# Motivated by TEI to TCF convertion effort, but can be used for 
+# spcifying other types of input sources, too.
+textSource = 
+element textSource {
+    # type of text source, e.g,
+    #  This should be set to the mime type of the source content.
+    #
+    #  For TEI documents, the follwoing guidelines apply.
+    #   type="application/tei+xml" - default 
+    #   type="application/tei+xml; tokenized=no"  : non-tokenized
+    #   type="application/tei+xml; tokenized=0"   : non-tokenized
+    #   type="application/tei+xml; tokenized=yes" : tokenized
+    #   type="application/tei+xml; tokenized=1"   : tokenized
+    attribute type { xsd:string },
+    # actual source content, supplied as external reference
+    attribute extref { xsd:anyURI}?,
+    # actual source content as embedded text node
+    xsd:string?
+}

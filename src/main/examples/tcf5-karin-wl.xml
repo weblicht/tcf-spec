@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-5/schemas/latest/d-spin_5.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="5">
+    <MetaData xmlns="http://www.dspin.de/data/metadata">
+        <source/>
+        <Services>
+            <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/1"
+                 CMDVersion="1.2"
+                 xsi:schemaLocation="http://www.clarin.eu/cmd/1 http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd">
+                <Header/>
+                <Resources>
+                    <ResourceProxyList/>
+                    <JournalFileProxyList/>
+                    <ResourceRelationList/>
+                </Resources>
+                <Components>
+                    <WebServiceToolChain>
+                        <GeneralInfo>
+                            <ResourceName>Custom chain</ResourceName>
+                            <ResourceClass>Toolchain</ResourceClass>
+                            <Descriptions>
+                                <Description/>
+                            </Descriptions>
+                        </GeneralInfo>
+                        <Toolchain>
+                            <ToolInChain>
+                                <PID>11858/00-1778-0000-0004-BA56-7</PID>
+                                <Parameter name="version" value="0.4"/>
+                            </ToolInChain>
+                            <ToolInChain>
+                                <PID>11858/00-1778-0000-0004-BA7B-4</PID>
+                            </ToolInChain>
+                            <ToolInChain>
+                                <PID>30</PID>
+                            </ToolInChain>
+                            <ToolInChain>
+                                <PID>11858/00-1778-0000-0004-BA27-2</PID>
+                            </ToolInChain>
+                            <ToolInChain>
+                                <PID>11858/00-1778-0000-0004-BA29-D</PID>
+                            </ToolInChain>
+                            <ToolInChain>
+                                <PID>287</PID>
+                            </ToolInChain>
+                        </Toolchain>
+                    </WebServiceToolChain>
+                </Components>
+            </CMD>
+        </Services>
+    </MetaData>
+    <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+        <text>Karin fliegt nach New York. Sie will dort Urlaub machen. Ich war im Super markt.</text>
+        <tokens>
+            <token ID="t_0">Karin</token>
+            <token ID="t_1">fliegt</token>
+            <token ID="t_2">nach</token>
+            <token ID="t_3">New</token>
+            <token ID="t_4">York</token>
+            <token ID="t_5">.</token>
+            <token ID="t_6">Sie</token>
+            <token ID="t_7">will</token>
+            <token ID="t_8">dort</token>
+            <token ID="t_9">Urlaub</token>
+            <token ID="t_10">machen</token>
+            <token ID="t_11">.</token>
+            <token ID="t_12">Ich</token>
+            <token ID="t_13">war</token>
+            <token ID="t_14" surfaceForm="im" parts="t_14 t_15">in</token>
+            <token ID="t_15">dem</token>
+            <token ID="t_16" surfaceForm="Super markt">Supermarkt</token>
+            <token ID="t_17">.</token>
+        </tokens>
+        <sentences>
+           <sentence ID="s_0" tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5"/>
+           <sentence ID="s_1" tokenIDs="t_6 t_7 t_8 t_9 t_10 t_11"/>
+           <sentence ID="s_2" tokenIDs="t_12 t_13 t_14 t_15 t_16 t_17"/>
+        </sentences>
+        <lemmas>
+            <lemma ID="l_0" tokenIDs="t_0">Karin</lemma>
+            <lemma ID="l_1" tokenIDs="t_1">fliegen</lemma>
+            <lemma ID="l_2" tokenIDs="t_2">nach</lemma>
+            <lemma ID="l_3" tokenIDs="t_3">New</lemma>
+            <lemma ID="l_4" tokenIDs="t_4">York</lemma>
+            <lemma ID="l_5" tokenIDs="t_5">.</lemma>
+            <lemma ID="l_6" tokenIDs="t_6">Sie|sie|sie</lemma>
+            <lemma ID="l_7" tokenIDs="t_7">wollen</lemma>
+            <lemma ID="l_8" tokenIDs="t_8">dort</lemma>
+            <lemma ID="l_9" tokenIDs="t_9">Urlaub</lemma>
+            <lemma ID="l_10" tokenIDs="t_10">machen</lemma>
+            <lemma ID="l_11" tokenIDs="t_11">.</lemma>
+            <lemma ID="l_12" tokenIDs="t_12">ich</lemma>
+            <lemma ID="l_13" tokenIDs="t_13">sein</lemma>
+            <lemma ID="l_14" tokenIDs="t_14">in</lemma>
+            <lemma ID="l_15" tokenIDs="t_15">d</lemma>
+            <lemma ID="l_16" tokenIDs="t_16">Supermarkt</lemma>
+            <lemma ID="l_17" tokenIDs="t_17">.</lemma>
+        </lemmas>
+        <POStags tagset="stts">
+            <tag ID="pt_0" tokenIDs="t_0">NE</tag>
+            <tag ID="pt_1" tokenIDs="t_1">VVFIN</tag>
+            <tag ID="pt_2" tokenIDs="t_2">APPR</tag>
+            <tag ID="pt_3" tokenIDs="t_3">NE</tag>
+            <tag ID="pt_4" tokenIDs="t_4">NE</tag>
+            <tag ID="pt_5" tokenIDs="t_5">$.</tag>
+            <tag ID="pt_6" tokenIDs="t_6">PPER</tag>
+            <tag ID="pt_7" tokenIDs="t_7">VMFIN</tag>
+            <tag ID="pt_8" tokenIDs="t_8">ADV</tag>
+            <tag ID="pt_9" tokenIDs="t_9">NN</tag>
+            <tag ID="pt_10" tokenIDs="t_10">VVINF</tag>
+            <tag ID="pt_11" tokenIDs="t_11">$.</tag>
+            <tag ID="pt_12" tokenIDs="t_12">PPER</tag>
+            <tag ID="pt_13" tokenIDs="t_13">VAFIN</tag>
+            <tag ID="pt_14" tokenIDs="t_14">APPR</tag>
+            <tag ID="pt_15" tokenIDs="t_15">ART</tag>
+            <tag ID="pt_16" tokenIDs="t_16">NN</tag>
+            <tag ID="pt_17" tokenIDs="t_17">$.</tag>
+        </POStags>
+        <chunks tagset="tagset" xmlns="http://www.dspin.de/data/textcorpus">
+            <chunk ID="ch_0" type="NP" tokenIDs="t_0"/>
+            <chunk ID="ch_1" type="VP" voice="none" tense="present" baseForm="baseForm" alterForm="alterForm" tokenIDs="t_1"/>
+            <chunk ID="ch_2" type="PP" tokenIDs="t_2 t_3 t_4"/>
+        </chunks>
+        <topologicalFields tagset="TAGSET01" xmlns="http://www.dspin.de/data/textcorpus">
+            <field tokenIDs="t1">VALUE01</field>
+            <field tokenIDs="t2">Value02</field>
+            <field tokenIDs="t3">value03</field>
+        </topologicalFields>
+        <parsing tagset="penntb">
+            <parse>
+                <constituent cat="VROOT" ID="c_14">
+                    <constituent cat="SIMPX" ID="c_12">
+                        <constituent cat="VF" ID="c_2">
+                            <constituent cat="NX" ID="c_1">
+                                <constituent cat="NE" ID="c_0" tokenIDs="t_0"></constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="LK" ID="c_5">
+                            <constituent cat="VXFIN" ID="c_4">
+                                <constituent cat="VVFIN" ID="c_3" tokenIDs="t_1"></constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="MF" ID="c_11">
+                            <constituent cat="PX" ID="c_10">
+                                <constituent cat="APPR" ID="c_6" tokenIDs="t_2"></constituent>
+                                <constituent cat="NX" ID="c_9">
+                                    <constituent cat="NE" ID="c_7" tokenIDs="t_3"></constituent>
+                                    <constituent cat="NE" ID="c_8" tokenIDs="t_4"></constituent>
+                                </constituent>
+                            </constituent>
+                        </constituent>
+                    </constituent>
+                    <constituent cat="$." ID="c_13" tokenIDs="t_5"></constituent>
+                </constituent>
+            </parse>
+            <parse>
+                <constituent cat="VROOT" ID="c_31">
+                    <constituent cat="SIMPX" ID="c_29">
+                        <constituent cat="VF" ID="c_17">
+                            <constituent cat="NX" ID="c_16">
+                                <constituent cat="PPER" ID="c_15" tokenIDs="t_6"></constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="LK" ID="c_20">
+                            <constituent cat="VXFIN" ID="c_19">
+                                <constituent cat="VMFIN" ID="c_18" tokenIDs="t_7"></constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="MF" ID="c_25">
+                            <constituent cat="ADVX" ID="c_22">
+                                <constituent cat="ADV" ID="c_21" tokenIDs="t_8"></constituent>
+                            </constituent>
+                            <constituent cat="NX" ID="c_24">
+                                <constituent cat="NN" ID="c_23" tokenIDs="t_9"></constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="VC" ID="c_28">
+                            <constituent cat="VXINF" ID="c_27">
+                                <constituent cat="VVINF" ID="c_26" tokenIDs="t_10"></constituent>
+                            </constituent>
+                        </constituent>
+                    </constituent>
+                    <constituent cat="$." ID="c_30" tokenIDs="t_11"></constituent>
+                </constituent>
+            </parse>
+            <parse>
+                <constituent cat="VROOT" ID="c_48">
+                    <constituent cat="SIMPX" ID="c_46">
+                        <constituent cat="VF" ID="c_34">
+                            <constituent cat="NX" ID="c_33">
+                                <constituent cat="PPER" ID="c_32" tokenIDs="t_12"></constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="LK" ID="c_37">
+                            <constituent cat="VXFIN" ID="c_36">
+                                <constituent cat="VAFIN" ID="c_35" tokenIDs="t_13"></constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="MF" ID="c_42">
+                            <constituent cat="PX" ID="c_41">
+                                <constituent cat="APPRART" ID="c_38" tokenIDs="t_14"></constituent>
+                                <constituent cat="NX" ID="c_40">
+                                    <constituent cat="NE" ID="c_39" tokenIDs="t_15"></constituent>
+                                </constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="VC" ID="c_45">
+                            <constituent cat="VXINF" ID="c_44">
+                                <constituent cat="VVINF" ID="c_43" tokenIDs="t_16"></constituent>
+                            </constituent>
+                        </constituent>
+                    </constituent>
+                    <constituent cat="$." ID="c_47" tokenIDs="t_17"></constituent>
+                </constituent>
+            </parse>
+        </parsing>
+        <depparsing tagset="tuebadz" multigovs="true" emptytoks="false">
+            <parse>
+                <dependency func="APP" govIDs="t_3" depIDs="t_4"></dependency>
+                <dependency func="-PUNCT-" govIDs="t_4" depIDs="t_5"></dependency>
+                <dependency func="ROOT" depIDs="t_1"></dependency>
+                <dependency func="SUBJ" govIDs="t_1" depIDs="t_0"></dependency>
+                <dependency func="PN" govIDs="t_2" depIDs="t_3"></dependency>
+                <dependency func="PP" govIDs="t_1" depIDs="t_2"></dependency>
+            </parse>
+            <parse>
+                <dependency func="AUX" govIDs="t_7" depIDs="t_10"></dependency>
+                <dependency func="-PUNCT-" govIDs="t_10" depIDs="t_11"></dependency>
+                <dependency func="ADV" govIDs="t_10" depIDs="t_8"></dependency>
+                <dependency func="ROOT" depIDs="t_7"></dependency>
+                <dependency func="SUBJ" govIDs="t_7" depIDs="t_6"></dependency>
+                <dependency func="OBJA" govIDs="t_10" depIDs="t_9"></dependency>
+            </parse>
+            <parse>
+                <dependency func="AUX" govIDs="t_13" depIDs="t_16"></dependency>
+                <dependency func="-PUNCT-" govIDs="t_16" depIDs="t_17"></dependency>
+                <dependency func="PP" govIDs="t_16" depIDs="t_14"></dependency>
+                <dependency func="ROOT" depIDs="t_13"></dependency>
+                <dependency func="SUBJ" govIDs="t_13" depIDs="t_12"></dependency>
+                <dependency func="PN" govIDs="t_14" depIDs="t_15"></dependency>
+            </parse>
+        </depparsing>
+        <morphology tagset="STTS">
+            <analysis tokenIDs="t_0">
+                <tag score="0.8">
+                    <fs>
+                        <f name="cat">proper name</f>
+                        <f name="case">nominative</f>
+                        <f name="number">singular</f>
+                        <f name="gender">feminine</f>
+                        <f name="test1">
+                            <fs>
+                                <f name="cat">proper name</f>
+                                <f name="case">nominative</f>
+                                <f name="number">singular</f>
+                                <f name="gender">feminine</f>
+                            </fs>
+                        </f>
+                    </fs>
+                </tag>
+                <tag score="0.6">
+                    <fs>
+                        <f name="cat">proper name</f>
+                        <f name="case">nominative</f>
+                        <f name="number">plural</f>
+                        <f name="gender">feminine</f>
+                        <f name="test2">
+                            <fs>
+                                <f name="cat">proper name</f>
+                                <f name="case">nominative</f>
+                                <f name="number">plural</f>
+                                <f name="gender">feminine</f>
+                            </fs>
+                        </f>
+                    </fs>
+                </tag>
+                <segmentation>
+                    <segment cat="proper name" type="stem">Karin</segment>
+                </segmentation>
+            </analysis>
+            <analysis tokenIDs="t_1">
+                <tag>
+                    <fs>
+                        <f name="cat">verb</f>
+                        <f name="person">3</f>
+                        <f name="number">singular</f>
+                        <f name="tense">present</f>
+                        <f name="indicative">true</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_2">
+                <tag>
+                    <fs>
+                        <f name="cat">preposition</f>
+                        <f name="case">dative</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_3">
+                <tag>
+                    <fs>
+                        <f name="cat">proper name</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_4">
+                <tag>
+                    <fs>
+                        <f name="cat">proper name</f>
+                        <f name="case">dative</f>
+                        <f name="number">singular</f>
+                        <f name="case">neuter</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_5">
+                <tag>
+                    <fs>
+                        <f name="cat">symbol</f>
+                        <f name="cat">punctuation</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_6">
+                <tag>
+                    <fs>
+                        <f name="cat">pronoun</f>
+                        <f name="personal">true</f>
+                        <f name="substituting">true</f>
+                        <f name="person">3</f>
+                        <f name="case">nominative</f>
+                        <f name="number">singular</f>
+                        <f name="gender">feminine</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_7">
+                <tag>
+                    <fs>
+                        <f name="cat">verb</f>
+                        <f name="person">3</f>
+                        <f name="number">singular</f>
+                        <f name="tense">present</f>
+                        <f name="indicative">true</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_8">
+                <tag>
+                    <fs>
+                        <f name="cat">adverb</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_9">
+                <tag>
+                    <fs>
+                        <f name="cat">regular noun</f>
+                        <f name="case">accusative</f>
+                        <f name="number">singular</f>
+                        <f name="gender">masculine</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_10">
+                <tag>
+                    <fs>
+                        <f name="cat">verb</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_11">
+                <tag>
+                    <fs>
+                        <f name="cat">symbol</f>
+                        <f name="cat">punctuation</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_12">
+                <tag>
+                    <fs>
+                        <f name="cat">pronoun</f>
+                        <f name="personal">true</f>
+                        <f name="substituting">true</f>
+                        <f name="person">1</f>
+                        <f name="case">nominative</f>
+                        <f name="number">singular</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_13">
+                <tag>
+                    <fs>
+                        <f name="cat">verb</f>
+                        <f name="person">1</f>
+                        <f name="number">singular</f>
+                        <f name="tense">past</f>
+                        <f name="indicative">true</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_14">
+                <tag>
+                    <fs>
+                        <f name="cat">preposition</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_15">
+                <tag>
+                    <fs>
+                        <f name="cat">article</f>
+                        <f name="definite">true</f>
+                        <f name="case">dative</f>
+                        <f name="number">singular</f>
+                        <f name="gender">masculine</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_16">
+                <tag>
+                    <fs>
+                        <f name="cat">regular noun</f>
+                        <f name="case">dative</f>
+                        <f name="number">singular</f>
+                        <f name="gender">masculine</f>
+                    </fs>
+                </tag>
+            </analysis>
+            <analysis tokenIDs="t_17">
+                <tag>
+                    <fs>
+                        <f name="cat">symbol</f>
+                        <f name="cat">punctuation</f>
+                    </fs>
+                </tag>
+            </analysis>
+        </morphology>
+        <namedEntities type="CoNLL2002">
+            <entity tokenIDs="t_0" class="PER"></entity>
+            <entity tokenIDs="t_3 t_4" class="LOC"></entity>
+        </namedEntities>
+        <references typetagset="BART" reltagset="TuebaDZ">
+            <entity>
+                <reference ID="rc_0" tokenIDs="t_0" mintokIDs="t_0" type="nam"/>
+                <reference ID="rc_1" tokenIDs="t_6" mintokIDs="t_6" type="pro.per3" rel="anaphoric" target="rc_0"/>
+            </entity>
+            <entity>
+                <reference ID="rc_2" tokenIDs="t_3 t_4" mintokIDs="t_3 t_4" type="nam"/>
+                <reference ID="rc_3" tokenIDs="t_8" mintokIDs="t_8" type="adv" rel="anaphoric" target="rc_2"/>
+            </entity>
+        </references>
+        <synonymy>
+            <orthform lemmaRefs="le_1">flattern, flirren, hinausfliegen</orthform>
+            <orthform lemmaRefs="le_9">Ferien</orthform>
+            <orthform lemmaRefs="le_10">auflegen, ausmachen, betätigen, bilden, erschaffen, erzeugen,
+                formen, hervorbringen, produzieren, schaffen, schöpfen, treiben, tun</orthform>
+        </synonymy>
+        <matches>
+            <query type="cqp">@[word='Urlaub' | ne='PER']</query>
+            <corpus pid="11858/00-1778-0000-0001-TCFEXAMPLE-A" name="TCF04-EXAMPLE">
+                <item tokenIDs="t_0" srcIDs="0">
+                    <target value="t_0" name="0"/>
+                    <category value="karin" name="text_filename"/>
+                    <category value="SFS, Uni Tuebingen" name="text_author"/>
+                </item>
+                <item tokenIDs="t_9" srcIDs="9">
+                    <target value="t_9" name="0"/>
+                    <category value="karin" name="text_filename"/>
+                    <category value="SFS, Uni Tuebingen" name="text_author"/>
+                </item>
+            </corpus>
+        </matches>
+        <WordSplittings type="syllables">
+            <split tokID="t_0">2</split>
+            <split tokID="t_9">2 4</split>
+            <split tokID="t_10">2</split>
+        </WordSplittings>
+        <geo xmlns:tc="http://www.dspin.de/data/textcorpus" coordFormat="DegDec" countryFormat="ISO3166_A2" capitalFormat="name" continentFormat="name">
+            <src>http://www.geonames.org/</src>
+            <gpoint continent="America" country="US" capital="New_York" alt="57.0" lon="-74.00597" tokenIDs="t_3 t_4" lat="40.71427"></gpoint>
+        </geo>
+        <Phonetics transcription="IPA">
+            <pron tokID="t_9">ˈuːɐ̯ˌlaʊ̯p</pron>
+        </Phonetics>
+        <textstructure>
+            <textspan start="t_0" end="t_5" type="page"/>
+            <textspan type="line"/>
+            <textspan start="t_0" end="t_11" type="paragraph"/>
+            <textspan start="t_0" end="t_1" type="line"/>
+            <textspan start="t_2" end="t_5" type="line"/>
+            <textspan start="t_6" end="t_11" type="page"/>
+            <textspan start="t_6" end="t_8" type="line"/>
+            <textspan start="t_9" end="t_11" type="line"/>
+            <textspan type="line"/>
+        </textstructure>
+        <orthography>
+            <correction operation="replace" tokenIDs="t_0">Karina</correction>
+        </orthography>
+        <wsd src="GermaNet8.0">
+            <ws tokenIDs="t_1" lexunits="75069 75197" comment="übertragen"/>
+            <ws tokenIDs="t_9" lexunits="-1" comment="unbestimmbar"/>
+            <ws tokenIDs="t_10" lexunits="82896"/>
+        </wsd>
+        <textSource type="tei/tokenized">
+&lt;TEI xmlns="http://www.tei-c.org/ns/1.0"&gt;&gt;
+&lt;teiHeader&gt;
+    &lt;fileDesc&gt;
+        &lt;titleStmt&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;respStmt&gt;
+            &lt;name&gt;&lt;/name&gt;
+            &lt;resp&gt;&lt;/resp&gt;
+            &lt;/respStmt&gt;
+        &lt;/titleStmt&gt;
+        &lt;publicationStmt&gt;&lt;p&gt;&lt;/p&gt;
+        &lt;/publicationStmt&gt;
+        &lt;sourceDesc&gt;&lt;p&gt;&lt;/p&gt;
+        &lt;/sourceDesc&gt;
+    &lt;/fileDesc&gt;
+&lt;/teiHeader&gt;
+&lt;text&gt;
+&lt;body&gt;
+&lt;p&gt;
+&lt;s&gt;
+&lt;w&gt;Karin&lt;/w&gt;
+&lt;w&gt;fliegt&lt;/w&gt;
+&lt;w&gt;nach&lt;/w&gt;
+&lt;w&gt;New&lt;/w&gt;
+&lt;w&gt;York&lt;/w&gt;
+&lt;w&gt;.&lt;/w&gt;
+&lt;/s&gt;
+&lt;s&gt;
+&lt;w&gt;Sie&lt;/w&gt;
+&lt;w&gt;will&lt;/w&gt;
+&lt;w&gt;dort&lt;/w&gt;
+&lt;w&gt;Urlaub&lt;/w&gt;
+&lt;w&gt;machen&lt;/w&gt;
+&lt;w&gt;.&lt;/w&gt;
+&lt;/s&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/text&gt;
+&lt;/TEI&gt;
+        </textSource>
+    </TextCorpus>
+</D-Spin>
